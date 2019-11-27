@@ -32,9 +32,7 @@ Things you may want to cover:
 - has_many :posts
 - has_many :comments
 
-
-
-## commentsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -43,3 +41,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :post
 - belongs_to :user
+
+## groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+
