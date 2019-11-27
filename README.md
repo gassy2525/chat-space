@@ -29,8 +29,8 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :posts
-- has_many :comments
+- has_many :messages
+- has_many :group
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -39,10 +39,21 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
 - belongs_to :user
+- belongs_to :group
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
+
+## groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
 
