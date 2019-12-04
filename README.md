@@ -27,29 +27,42 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|index: true|
 ### Association
-- has_many :posts
-- has_many :comments
+- has_many :messages
+- has_many :groups_users　
+- has_many :groups, through:groups_users
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|text|string||
+|image|string||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+- belongs_to :group
 
-## commentsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+
 ### Association
-- belongs_to :post
+- has_many :messages
+- has_many :groups_users 
+- has_many :users, through: :groups_users
+
+
+## groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+
+### Association
 - belongs_to :user
+- belongs_to :group
+

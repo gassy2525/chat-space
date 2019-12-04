@@ -1,0 +1,30 @@
+.chat
+  .header
+    .left-header
+      .left-header__title
+      ナチュラルウッズ
+      %ul.left-header__members
+        Member：
+        .member
+        
+          メンバー名
+    .right-header
+      .right-header__button
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+          ヒロ
+        .upper-message__date
+          201９／12／04
+      .lower-meesage
+        .lower-message__content
+  .form
+    %form
+      %input.form__message
+      .form__mask
+        %label.form__mask__image
+          = icon('fa','image',class: 'icon')
+          %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}
