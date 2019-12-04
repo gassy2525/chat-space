@@ -8,7 +8,6 @@
     display: flex;
     justify-content: space-between;
     .left-header {
-      // float: left;
       &__title {
         color: #333;
         font-size: 20px;
@@ -67,7 +66,6 @@
   }
 
   .form {
-    // position: fixed; 固定する
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
